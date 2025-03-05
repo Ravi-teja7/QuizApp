@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: rgb(13, 9, 9);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: #3a2fde;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Main Quiz Container */
+.quiz-container
+{
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Question Animation */
+@keyframes throwOut
+{
+    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateX(-150%) rotate(-20deg); opacity: 0; }
+}
+
+@keyframes throwIn
+{
+    0% { transform: translateX(150%) rotate(20deg); opacity: 0; }
+    100% { transform: translateX(0) rotate(0); opacity: 1; }
+}
+
+#question-container
+{
+    animation: throwIn 0.5s ease-out;
+}
+
+/* Answer Buttons */
+.answer-btn
+{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #764ba2;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease-in-out;
+}
+
+.answer-btn:hover
+{
+    background: #764ba2;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Correct & Wrong Answer Effects */
+.correct
+{
+    background: #28a745 !important;
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.wrong
+{
+    background: #dc3545 !important;
+    color: white;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Score Display */
+#score
+{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #0000FF;
+    text-shadow: 0px 0px 5px rgba(255, 204, 0, 0.8);
+}
+
+/* Final Page */
+.final-page
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffebcd, #ffccff, #cceeff, #ccffdd);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0px 0px 50px rgba(255, 100, 150, 0.8);
+}
+
+#final-score
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #c20781e0; /* Brighter score color */
+    display: block;
+    margin-top: 10px;
+}
+
+.blast-particle
+{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, yellow, orange, red);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: explode 1.5s ease-out infinite;
+}
+
+@keyframes explode
+{
+    0%
+    {
+        transform: scale(1); opacity: 1;
+    }
+    100%
+    {
+        transform: scale(4); opacity: 0;
+    }
+}
+
+/* Card Animation */
+.card-throw
+{
+    animation: throwIn 0.6s ease-in-out;
+}
+
+@keyframes throwIn
+{
+    from
+    {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+/* Firework Blast Effect */
+.blast-particle
+{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, yellow, orange, red);
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 
+        39% 35%
+    ); /* Star-like sparkle shape */
+    opacity: 0;
+    animation: explode 1.5s ease-out infinite;
+}
+
+@keyframes explode
+{
+    0%
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+/* Floating Glow Effect */
+@keyframes floatGlow
+{
+    0%
+    {
+        transform: translateY(0px); opacity: 0.8;
+    }
+    50%
+    {
+        transform: translateY(-10px); opacity: 1;
+    }
+    100%
+    {
+        transform: translateY(0px); opacity: 0.8;
+    }
+}
+
+/* Score Bounce Animation */
+#score
+{
+    animation: bounce 1.2s infinite ease-in-out;
+}
+
+@keyframes bounce
+{
+    0%, 100%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-5px);
+    }
+}
+
+/* Timer Display */
+#timer
+{
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/*Explosion Effect */
+.blast-particle
+{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, yellow, orange, red);
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 
+        39% 35%
+    );
+    /* Sparkle shape */
+    opacity: 0;
+    animation: explode 1.5s ease-out infinite;
+}

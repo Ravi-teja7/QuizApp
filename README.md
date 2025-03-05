@@ -21,3 +21,9 @@ The quiz presents multiple-choice questions, and if a user selects the wrong ans
 **JavaScript** handles the quiz logic, including button clicks, score updates, and animations. **CSS animations** add smooth transitions, such as a **card throw effect** when switching between questions. The final score page is designed to be clear and easy to read, ensuring users can see their performance at a glance. The quiz is also **responsive**, meaning it works well on different devices.  
 
 This project can be used in **education, training, online tests, or just for fun**. Teachers can use it in classrooms, companies can use it for employee assessments, and it can even be adapted for trivia games. Since it was first developed on **CodePen**, it was easy to experiment with different features, and moving to **Visual Studio Code** made it easier to structure and refine the final version. Future improvements could include adding difficulty levels, different categories, or even multiplayer features to make it even more interactive.
+
+
+# OUTPUT #
+
+<img width="930" alt="Image" src="https://github.com/user-attachments/assets/4508650e-d2a6-4eac-a42c-afa0a72f98d4" />
+

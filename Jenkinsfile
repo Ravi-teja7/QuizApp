@@ -2,20 +2,37 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
-                echo 'Cloning QuizApp repository'
+                git branch: 'main',
+                    url: 'https://github.com/Ravi-teja7/QuizApp.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Static website - no build required.'
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                sudo cp Index.html /usr/share/nginx/html/
-                sudo cp Script.js /usr/share/nginx/html/
-                sudo cp Styles.css /usr/share/nginx/html/
+                cp Index.html /usr/share/nginx/html/
+                cp script.js /usr/share/nginx/html/
+                cp styles.css /usr/share/nginx/html/
                 '''
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'QuizApp deployed successfully!'
+        }
+        failure {
+            echo 'Deployment failed!'
         }
     }
 }

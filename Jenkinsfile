@@ -8,15 +8,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Static website - no build required'
-            }
-        }
-
         stage('Deploy') {
             steps {
-                echo 'Deployment completed'
+                sh '''
+                sudo cp Index.html /usr/share/nginx/html/
+                sudo cp Script.js /usr/share/nginx/html/
+                sudo cp Styles.css /usr/share/nginx/html/
+                '''
             }
         }
     }

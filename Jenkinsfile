@@ -17,14 +17,14 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh '''
-                cp Index.html /usr/share/nginx/html/
-                cp script.js /usr/share/nginx/html/
-                cp styles.css /usr/share/nginx/html/
-                '''
-            }
-        }
+    steps {
+        sh '''
+        sudo cp Index.html /usr/share/nginx/html/
+        sudo cp script.js /usr/share/nginx/html/
+        sudo cp styles.css /usr/share/nginx/html/
+        '''
+    }
+}
     }
 
     post {

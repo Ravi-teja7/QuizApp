@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
     steps {
         sh '''
-        sudo cp Index.html /usr/share/nginx/html/
+        sudo cp Index.html /usr/share/nginx/html/index.html
         sudo cp script.js /usr/share/nginx/html/
         sudo cp styles.css /usr/share/nginx/html/
         '''
